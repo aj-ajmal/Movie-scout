@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide native scrollbars for the horizontal genre bar */
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+.scrollbar-hide {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Scroll snap helpers */
+.snap-x {
+	scroll-snap-type: x proximity;
+}
+.snap-start {
+	scroll-snap-align: start;
+}
+
+/* Small visual helper for buttons when using dark background */
+.genre-pill:focus {
+	outline: 2px solid rgba(56, 189, 248, 0.2);
+	outline-offset: 2px;
+}
