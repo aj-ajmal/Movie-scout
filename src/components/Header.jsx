@@ -1,34 +1,34 @@
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
-
 const Header = () => {
   return (
-    // Light, friendly header
-    <header className="bg-white text-gray-900 shadow sticky top-0 z-50 border-b">
+    // Updated to Dark Theme for "AjmalFlix" vibe
+    <header className="bg-gray-900 text-white shadow-lg sticky top-0 z-50 opacity-95 backdrop-blur-sm">
       <nav className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
 
-        {/* 1. Logo Section - Updated to MovieScout */}
+        {/* 1. Logo Section - AjmalFlix Branding */}
         <Link to="/" className="text-2xl font-bold flex items-center gap-2 group">
           <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
-            🎬
+            🍿
           </span>
-          <span className="bg-gradient-to-r from-indigo-500 to-sky-400 bg-clip-text text-transparent tracking-wide uppercase">
-            MovieScout
+          <span className="tracking-wide uppercase">
+            <span className="text-red-600">Aj</span>
+            <span className="text-white">Flix</span>
           </span>
         </Link>
 
         {/* 2. Search & Tools Section */}
         <div className="flex items-center gap-4 w-full md:w-auto">
-          {/* Search Bar - Keeps your responsive width logic */}
+          {/* Search Bar */}
           <div className="w-full md:w-80">
             <SearchBar />
           </div>
 
-          {/* Watchlist Link - visible on mobile and larger screens */}
+          {/* Watchlist Link */}
           <Link
             to="/watchlist"
-            className="flex items-center gap-2 text-gray-600 hover:text-rose-500 transition-colors"
+            className="flex items-center gap-2 text-gray-300 hover:text-red-500 transition-colors"
             title="My Watchlist"
             aria-label="My Watchlist"
           >

@@ -1,48 +1,80 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="mt-0 border-t bg-white text-gray-700">
+    // Updated to Dark Theme (bg-gray-900) to match Header
+    <footer className="mt-0 border-t border-gray-800 bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-10 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-4 flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-md bg-indigo-100 text-indigo-600">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-indigo-500">
-                  <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor" />
-                </svg>
-              </div>
-              <div>
-                <div className="text-gray-900 text-lg font-semibold">MovieScout</div>
-                <div className="text-sm text-gray-600">Discover movies, trailers & cast — fast.</div>
-              </div>
-            </div>
 
-            <p className="text-sm text-gray-600">Built with the Movie DB API. Browse popular titles, view trailers, and explore cast details with a modern, responsive UI.</p>
+          {/* 1. Branding Section */}
+          <div className="md:col-span-4 flex flex-col gap-3">
+            <Link to="/" className="flex items-center gap-3 group">
+              {/* Popcorn Icon */}
+              <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                🍿
+              </div>
+              {/* AjmalFlix Logo Text */}
+              <div className="text-2xl font-bold tracking-wide uppercase">
+                <span className="text-red-600">Aj</span>
+                <span className="text-white">Flix</span>
+              </div>
+            </Link>
+
+            <p className="text-sm text-gray-400 mt-2">
+              Discover movies, trailers & cast — fast.
+              Built with the TMDB API using React & Tailwind CSS.
+            </p>
           </div>
 
-          <div className="md:col-span-5 grid grid-cols-2 gap-6">
+          {/* 2. Navigation Links */}
+          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-3">Explore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link to="/" className="hover:text-indigo-600">Home</Link></li>
-                <li><a href="/" className="hover:text-indigo-600">Popular</a></li>
-                <li><a href="/" className="hover:text-indigo-600">Top Rated</a></li>
+              <h4 className="text-sm font-semibold text-gray-200 mb-3 uppercase tracking-wider">Explore</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <Link to="/" className="hover:text-red-500 transition-colors">Home</Link>
+                </li>
+                <li>
+                  <Link to="/watchlist" className="hover:text-red-500 transition-colors">My Watchlist</Link>
+                </li>
+                {/* <li>
+                  <Link to="/search?q=action" className="hover:text-red-500 transition-colors">Popular Movies</Link>
+                </li> */}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-gray-900 mb-3">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="hover:text-indigo-600">TMDB</a></li>
+              <h4 className="text-sm font-semibold text-gray-200 mb-3 uppercase tracking-wider">Connect</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="https://github.com/aj-ajmal" target="_blank" rel="noreferrer" className="hover:text-red-500 transition-colors">GitHub</a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/syedajmal1703/" target="_blank" rel="noreferrer" className="hover:text-red-500 transition-colors">LinkedIn</a>
+                </li>
               </ul>
             </div>
+
+             {/* <div>
+              <h4 className="text-sm font-semibold text-gray-200 mb-3 uppercase tracking-wider">Powered By</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" className="hover:text-red-500 transition-colors">
+                    The Movie Database
+                  </a>
+                </li>
+              </ul>
+            </div> */}
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-6 text-center text-sm text-gray-500">© {new Date().getFullYear()} Aj Tech — All rights reserved</div>
+        {/* 3. Copyright Section */}
+        <div className="mt-8 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Aj Flix — Designed by Aj Tech. All rights reserved.
+        </div>
       </div>
     </footer>
-  )
+  );
 }
