@@ -67,7 +67,7 @@ const MovieDetails = () => {
           role="img"
           aria-label={`${movie.title} backdrop`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/75 via-violet-800/40 to-transparent z-0" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 -mt-20 items-start">
@@ -77,32 +77,32 @@ const MovieDetails = () => {
             <img
               src={posterUrl}
               alt={movie.title}
-              className="w-full h-auto rounded-xl shadow-2xl border-4 border-white/5 z-40"
+              className="w-full h-auto rounded-xl shadow-2xl border-4 border-indigo-900/50 z-40"
             />
           </div>
         </div>
 
         {/* Details Column */}
-        <div className="md:col-span-9 lg:col-span-9 text-gray-100 relative z-20">
-          <div className="bg-black/60 backdrop-blur-sm p-5 mb-5 rounded-lg mt-0">
+        <div className="md:col-span-9 lg:col-span-9 text-gray-900 relative z-20">
+          <div className="bg-white/90 backdrop-blur-sm p-5 mb-5 rounded-lg mt-0 shadow">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-2">{movie.title}</h1>
-            {movie.tagline && <p className="text-lg italic text-gray-300 mb-4">{movie.tagline}</p>}
+            {movie.tagline && <p className="text-lg italic text-gray-600 mb-4">{movie.tagline}</p>}
 
-            <div className="prose prose-invert max-w-none text-gray-200 mb-6">
+            <div className="prose max-w-none text-gray-700 mb-6">
               <p>{movie.overview}</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-700 mb-6">
               <div>
-                <div className="text-xs text-gray-400">Rating</div>
+                <div className="text-xs text-gray-500">Rating</div>
                 <div className="font-semibold text-lg">{(movie.vote_average ?? 0).toFixed(1)} / 10</div>
               </div>
               <div>
-                <div className="text-xs text-gray-400">Release Date</div>
+                <div className="text-xs text-gray-500">Release Date</div>
                 <div className="font-semibold">{movie.release_date ?? 'N/A'}</div>
               </div>
               <div>
-                <div className="text-xs text-gray-400">Genres</div>
+                <div className="text-xs text-gray-500">Genres</div>
                 <div className="font-semibold">{(movie.genres || []).map(g => g.name).join(', ') || 'N/A'}</div>
               </div>
             </div>
@@ -110,40 +110,40 @@ const MovieDetails = () => {
 
           {/* Badges */}
           <div className="flex flex-wrap gap-3 mb-6">
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400 text-black text-sm">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500 text-white text-sm">
               {movie.runtime ? `${movie.runtime} min` : 'Runtime N/A'}
             </span>
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-sky-600 text-white text-sm">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-600 text-white text-sm">
               {movie.status ?? 'Status N/A'}
             </span>
           </div>
 
           {/* Cast */}
           <section className="mb-10 mt-6">
-            <h2 className="text-2xl font-bold mb-4">Top Billed Cast</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Top Billed Cast</h2>
             {credits?.cast?.length ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {credits.cast.slice(0, 10).map((actor) => (
-                  <div key={actor.cast_id ?? actor.id} className="bg-gray-800/40 rounded-lg p-3 text-center">
+                  <div key={actor.cast_id ?? actor.id} className="bg-white rounded-lg p-3 text-center border">
                     <img
                       src={actor.profile_path ? getImageUrl(actor.profile_path, 200) : 'https://via.placeholder.com/200x300?text=No+Photo'}
                       alt={actor.name}
                       className="w-full h-44 object-cover rounded-md mb-2"
                     />
-                    <p className="font-semibold text-sm text-gray-100">{actor.name}</p>
-                    <p className="text-xs text-gray-400">{actor.character}</p>
+                    <p className="font-semibold text-sm text-gray-900">{actor.name}</p>
+                    <p className="text-xs text-gray-600">{actor.character}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-gray-400">No cast information available.</p>
+              <p className="text-gray-600">No cast information available.</p>
             )}
           </section>
 
           {/* Trailer */}
           {video && (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">Official Trailer</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">Official Trailer</h2>
               <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.key}`}
@@ -160,7 +160,7 @@ const MovieDetails = () => {
           {/* Similar Movies Section (NEW) */}
           {similarMovies.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">You might also like</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">You might also like</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {similarMovies.slice(0, 4).map((m) => (
                    <MovieCard key={m.id} movie={m} />

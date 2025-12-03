@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       {/* Header is outside Routes so it stays on every page */}
       <Header />
-          <main className="min-h-screen bg-gray-900 text-gray-100">
+          <main className="min-h-screen bg-gradient-to-br from-white via-sky-50 to-emerald-50 text-gray-900">
             <div className="container mx-auto px-4 py-10 max-w-7xl">
         <Routes>
           <Route path="/" element={<Home />} />

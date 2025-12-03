@@ -58,13 +58,13 @@ const MovieCard = ({ movie }) => {
           <img src={posterUrl} alt={movie.title} className="w-full h-full object-cover" />
         </div>
 
-        <div className="p-3 bg-gradient-to-t from-black/80 to-transparent">
-          <h3 className="font-semibold text-md text-white truncate group-hover:text-emerald-300">
+        <div className="p-3 bg-gradient-to-t from-white/80 to-transparent">
+          <h3 className="font-semibold text-md text-gray-900 truncate group-hover:text-indigo-600">
             {movie.title}
           </h3>
           <div className="flex items-center justify-between mt-2">
-            <span className="text-sm text-gray-300">{movie.release_date?.slice(0,4)}</span>
-            <span className="inline-flex items-center px-2 py-1 text-sm font-medium rounded-full bg-amber-400 text-black">
+            <span className="text-sm text-gray-600">{movie.release_date?.slice(0,4)}</span>
+            <span className="inline-flex items-center px-2 py-1 text-sm font-medium rounded-full bg-yellow-300 text-black">
               {movie.vote_average.toFixed(1)}
             </span>
           </div>

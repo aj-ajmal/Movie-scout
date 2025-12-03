@@ -4,8 +4,8 @@ import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
-    // Added 'sticky top-0 z-50' so it floats when scrolling
-    <header className="bg-gray-900 text-white shadow-lg sticky top-0 z-50 opacity-95 backdrop-blur-sm">
+    // Light, friendly header
+    <header className="bg-white text-gray-900 shadow sticky top-0 z-50 border-b">
       <nav className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* 1. Logo Section - Updated to MovieScout */}
@@ -13,7 +13,7 @@ const Header = () => {
           <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
             🎬
           </span>
-          <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent tracking-wide uppercase">
+          <span className="bg-gradient-to-r from-indigo-500 to-sky-400 bg-clip-text text-transparent tracking-wide uppercase">
             MovieScout
           </span>
         </Link>
@@ -28,7 +28,7 @@ const Header = () => {
           {/* Watchlist Link - visible on mobile and larger screens */}
           <Link
             to="/watchlist"
-            className="flex items-center gap-2 text-gray-300 hover:text-rose-400 transition-colors"
+            className="flex items-center gap-2 text-gray-600 hover:text-rose-500 transition-colors"
             title="My Watchlist"
             aria-label="My Watchlist"
           >

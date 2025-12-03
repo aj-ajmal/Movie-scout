@@ -63,7 +63,7 @@ const Home = () => {
           <button
             onClick={() => handleGenreClick(null)}
             className={`genre-pill shrink-0 md:shrink snap-start px-4 py-2 rounded-full whitespace-nowrap shadow-sm transform transition hover:scale-105 ${
-              selectedGenre === null ? 'bg-emerald-400 text-black' : 'bg-gray-800 text-gray-300'
+              selectedGenre === null ? 'bg-indigo-500 text-white' : 'bg-white/90 text-gray-700 border border-gray-200'
             }`}
           >
             All
@@ -74,7 +74,7 @@ const Home = () => {
               key={g.id}
               onClick={() => handleGenreClick(g.id)}
               className={`genre-pill shrink-0 md:shrink snap-start px-4 py-2 rounded-full whitespace-nowrap shadow-sm transform transition hover:scale-105 ${
-                selectedGenre === g.id ? 'bg-emerald-400 text-black' : 'bg-gray-800 text-gray-300'
+                selectedGenre === g.id ? 'bg-indigo-500 text-white' : 'bg-white/90 text-gray-700 border border-gray-200'
               }`}
             >
               {g.name}
